@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>SengokuStoryGenerator</RootNamespace>
+    <AssemblyName>SengokuStoryGenerator</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SengokuStoryGenerator.Core\SengokuStoryGenerator.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BitButterCORE.V2">
+      <HintPath>..\Reference\BitButterCORE.V2.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
