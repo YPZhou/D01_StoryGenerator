@@ -1,18 +1,24 @@
-﻿using static SengokuStoryGenerator.Core.Constants;
+﻿using BitButterCORE.V2;
+using static SengokuStoryGenerator.Core.Constants;
 
 namespace SengokuStoryGenerator.Core
 {
-	static internal class PersonNameGenerator
+	static internal class NameGenerator
 	{
-		public static string GetRandomPersonName()
+		public static string GetRandomClanName()
 		{
 			var clanNameTypePool = new ClanNameTypePool();
 			var clanNameAdjectivePool = new ClanNameAdjectivePool();
 			var clanNameLocationPool = new ClanNameLocationPool();
 
-			var clanName = string.Format(clanNameTypePool.DrawFromAllEntries().ClanNameType == ClanNameType.AdjectiveLocation ? "{0}{1}" : "{1}{0}",
+			return string.Format(clanNameTypePool.DrawFromAllEntries().ClanNameType == ClanNameType.AdjectiveLocation ? "{0}{1}" : "{1}{0}",
 				clanNameAdjectivePool.DrawFromAllEntries().ClanNameAdjective,
 				clanNameLocationPool.DrawFromAllEntries().ClanNameLocation);
+		}
+
+		public static string GetRandomPersonName(IObjectReference<Clan> clan)
+		{
+			var clanName = clan.Object.Name;
 
 			var givenNameTypePool = new GivenNameTypePool();
 			var givenNameAdjectivePool = new GivenNameAdjectivePool();
