@@ -1,6 +1,6 @@
 ﻿using BitButterCORE.V2;
 
-namespace SengokuStoryGenerator.Core
+namespace StoryGenerator.Core
 {
 	public class Person : BaseObject<Person>
 	{

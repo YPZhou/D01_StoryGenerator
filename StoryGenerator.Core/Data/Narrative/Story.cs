@@ -1,4 +1,4 @@
-﻿namespace SengokuStoryGenerator.Core
+﻿namespace StoryGenerator.Core
 {
 	internal class Story
 	{

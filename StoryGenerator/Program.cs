@@ -1,7 +1,7 @@
 ﻿using BitButterCORE.V2;
-using SengokuStoryGenerator.Core;
+using StoryGenerator.Core;
 
-namespace SengokuStoryGenerator
+namespace StoryGenerator
 {
 	internal class Program
 	{

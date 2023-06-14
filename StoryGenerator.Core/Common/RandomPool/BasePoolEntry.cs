@@ -1,4 +1,4 @@
-﻿namespace SengokuStoryGenerator.Core
+﻿namespace StoryGenerator.Core
 {
 	public abstract class BasePoolEntry
 	{

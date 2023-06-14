@@ -1,6 +1,6 @@
-﻿using static SengokuStoryGenerator.Core.Constants;
+﻿using static StoryGenerator.Core.Constants;
 
-namespace SengokuStoryGenerator.Core
+namespace StoryGenerator.Core
 {
 	public class ClanNameTypeEntry : BasePoolEntry
 	{

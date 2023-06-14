@@ -1,7 +1,7 @@
 ﻿using BitButterCORE.V2;
-using static SengokuStoryGenerator.Core.Constants;
+using static StoryGenerator.Core.Constants;
 
-namespace SengokuStoryGenerator.Core
+namespace StoryGenerator.Core
 {
 	static internal class NameGenerator
 	{

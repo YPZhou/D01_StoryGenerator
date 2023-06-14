@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SengokuStoryGenerator", "StoryGenerator\SengokuStoryGenerator.csproj", "{BD530444-E7BA-465B-BEFF-3B60C68FF156}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoryGenerator", "StoryGenerator\StoryGenerator.csproj", "{BD530444-E7BA-465B-BEFF-3B60C68FF156}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SengokuStoryGenerator.Core", "StoryGenerator.Core\SengokuStoryGenerator.Core.csproj", "{8C56C0B4-511F-4367-A6E7-68B7FE8B1562}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoryGenerator.Core", "StoryGenerator.Core\StoryGenerator.Core.csproj", "{8C56C0B4-511F-4367-A6E7-68B7FE8B1562}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

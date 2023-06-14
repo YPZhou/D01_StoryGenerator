@@ -1,4 +1,4 @@
-﻿namespace SengokuStoryGenerator.Core
+﻿namespace StoryGenerator.Core
 {
 	public class ClanNameLocationEntry : BasePoolEntry
 	{
