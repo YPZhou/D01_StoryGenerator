@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SengokuStoryGenerator.Core\SengokuStoryGenerator.Core.csproj" />
+    <ProjectReference Include="..\StoryGenerator.Core\SengokuStoryGenerator.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
