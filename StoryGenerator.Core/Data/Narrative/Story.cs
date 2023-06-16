@@ -1,6 +1,14 @@
 ﻿namespace StoryGenerator.Core
 {
-	internal class Story
+	public class Story
 	{
+		public Story(Narrator narrator)
+		{
+			this.narrator = narrator;
+			calendar = new Calendar(narrator.StartYear, narrator.StartMonth);
+		}
+
+		readonly Narrator narrator;
+		readonly Calendar calendar;
 	}
 }

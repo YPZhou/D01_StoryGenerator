@@ -7,6 +7,9 @@ namespace StoryGenerator
 	{
 		static void Main(string[] _)
 		{
+			var narrator = new Narrator(1540, 1);
+			var story = new Story(narrator);
+
 			var clan = ObjectFactory.Instance.Create<Clan>();
 			for (var i = 0; i < 50; i++)
 			{
