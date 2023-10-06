@@ -2,7 +2,7 @@
 
 namespace StoryGenerator.Core
 {
-	internal class Calendar
+	public class Calendar
 	{
 		public Calendar(int year, int month, int day = 1)
 		{
@@ -19,10 +19,10 @@ namespace StoryGenerator.Core
 
 			private set
 			{
-				month += 1;
+				month = value;
 				if (month > MONTH_PER_YEAR)
 				{
-					month = 1;
+					month %= MONTH_PER_YEAR;
 					Year += 1;
 				}
 			}
@@ -36,15 +36,22 @@ namespace StoryGenerator.Core
 
 			private set
 			{
-				day += 1;
+				day = value;
 				if (day > DAY_PER_MONTH)
 				{
-					day = 1;
-					Month += 1;
+					day %= DAY_PER_MONTH;
+					month += 1;
 				}
 			}
 		}
 
 		int day;
+
+		public void AdvanceTime(int deltaDay = 1, int deltaMonth = 0, int deltaYear = 0)
+		{
+			Day += deltaDay;
+			Month += deltaMonth;
+			Year += deltaYear;
+		}
 	}
 }

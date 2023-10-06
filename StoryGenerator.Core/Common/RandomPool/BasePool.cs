@@ -43,7 +43,8 @@
 						return validEntry;
 					}
 				}
-				return default;
+
+				throw new InvalidOperationException($"Fail to draw from {validEntries.Count()} entries with total weight {totalWeight}, draw weight is {weightIndex}.");
 			}
 		}
 
@@ -55,7 +56,7 @@
 			}
 		}
 
-		protected List<T> PoolEntries => poolEntries ?? (poolEntries = new List<T>());
-		List<T> poolEntries;
+		protected List<T> PoolEntries => poolEntries ??= new List<T>();
+		List<T>? poolEntries;
 	}
 }

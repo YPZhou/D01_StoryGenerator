@@ -11,15 +11,23 @@ namespace StoryGenerator
 			var story = new Story(narrator);
 
 			var clan = ObjectFactory.Instance.Create<Clan>();
+			ObjectFactory.Instance.Create<Person>(clan);
+
 			for (var i = 0; i < 50; i++)
 			{
-				var person = ObjectFactory.Instance.Create<Person>(clan);
-				Console.WriteLine($"角色{i + 1}：{person.Object.Name}");
-
-				if (i % 10 == 9)
+				var plot = story.AdvancePlot();
+				if (plot != null)
 				{
-					clan = ObjectFactory.Instance.Create<Clan>();
+					Console.WriteLine(plot);
 				}
+
+				//var person = ObjectFactory.Instance.Create<Person>(clan);
+				//Console.WriteLine($"角色{i + 1}：{person.Object.Name}");
+
+				//if (i % 10 == 9)
+				//{
+				//	clan = ObjectFactory.Instance.Create<Clan>();
+				//}
 			}
 		}
 	}

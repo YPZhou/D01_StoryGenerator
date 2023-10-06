@@ -14,5 +14,10 @@
 		public int StartMonth { get; }
 
 		public int StartDay { get; }
+
+		public Plot? GetNextPlot(Calendar calendar)
+		{
+			return new Plot();
+		}
 	}
 }
