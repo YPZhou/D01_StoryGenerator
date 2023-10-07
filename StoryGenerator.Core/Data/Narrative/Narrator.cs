@@ -1,4 +1,6 @@
-﻿namespace StoryGenerator.Core
+﻿using BitButterCORE.V2;
+
+namespace StoryGenerator.Core
 {
 	public class Narrator
 	{
@@ -15,9 +17,21 @@
 
 		public int StartDay { get; }
 
-		public Plot? GetNextPlot(Calendar calendar)
+		public IEnumerable<Plot> GetNextPlots(Calendar calendar)
 		{
-			return new Plot();
+			var actors = ObjectFactory.Instance
+				.Query<IBaseObject>()
+				.Select(obj => obj.Object)
+				.OfType<IActor>();
+
+			foreach (var actor in actors)
+			{
+				var plot = actor.GetNextPlot(calendar);
+				if (plot != null)
+				{
+					yield return plot;
+				}
+			}
 		}
 	}
 }

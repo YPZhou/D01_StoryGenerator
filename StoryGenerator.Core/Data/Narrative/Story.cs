@@ -11,10 +11,10 @@
 		readonly Narrator narrator;
 		readonly Calendar calendar;
 
-		public Plot? AdvancePlot()
+		public IEnumerable<Plot> AdvancePlots()
 		{
 			calendar.AdvanceTime(deltaMonth: 1);
-			return narrator.GetNextPlot(calendar);
+			return narrator.GetNextPlots(calendar);
 		}
 	}
 }

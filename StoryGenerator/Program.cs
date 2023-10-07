@@ -15,8 +15,8 @@ namespace StoryGenerator
 
 			for (var i = 0; i < 50; i++)
 			{
-				var plot = story.AdvancePlot();
-				if (plot != null)
+				var plots = story.AdvancePlots();
+				foreach (var plot in plots)
 				{
 					Console.WriteLine(plot);
 				}

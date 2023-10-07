@@ -2,7 +2,7 @@
 
 namespace StoryGenerator.Core
 {
-	public class Clan : BaseObject<Clan>
+	public class Clan : BaseObject<Clan>, IActor
 	{
 		public Clan(uint id)
 			: base(id)
@@ -11,5 +11,10 @@ namespace StoryGenerator.Core
 		}
 
 		public string Name { get; }
+
+		Plot? IActor.GetNextPlot(Calendar calendar)
+		{
+			return null;
+		}
 	}
 }
