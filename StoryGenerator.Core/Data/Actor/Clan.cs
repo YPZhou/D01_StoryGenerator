@@ -12,7 +12,7 @@ namespace StoryGenerator.Core
 
 		public string Name { get; }
 
-		Plot? IActor.GetNextPlot(Calendar calendar)
+		Plot? IActor.GetNextPlot(TimeSpan timeSpan)
 		{
 			return null;
 		}

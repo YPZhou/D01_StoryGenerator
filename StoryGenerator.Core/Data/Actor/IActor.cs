@@ -2,6 +2,6 @@
 {
 	interface IActor
 	{
-		Plot? GetNextPlot(Calendar calendar);
+		Plot? GetNextPlot(TimeSpan timeSpan);
 	}
 }

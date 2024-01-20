@@ -13,7 +13,7 @@
 
 		public IEnumerable<Plot> AdvancePlots()
 		{
-			calendar.AdvanceTime(deltaMonth: 1);
+			calendar.AdvanceTime(TimeSpan.GetElapsedMonths(1));
 			return narrator.GetNextPlots(calendar);
 		}
 	}

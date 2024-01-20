@@ -10,8 +10,9 @@ namespace StoryGenerator
 			var narrator = new Narrator(1540, 1);
 			var story = new Story(narrator);
 
-			var clan = ObjectFactory.Instance.Create<Clan>();
-			ObjectFactory.Instance.Create<Person>(clan);
+			ObjectFactory.Instance.Create<World>();
+			//var clan = ObjectFactory.Instance.Create<Clan>();
+			//ObjectFactory.Instance.Create<Person>(clan);
 
 			for (var i = 0; i < 50; i++)
 			{

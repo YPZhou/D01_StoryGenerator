@@ -47,11 +47,16 @@ namespace StoryGenerator.Core
 
 		int day;
 
-		public void AdvanceTime(int deltaDay = 1, int deltaMonth = 0, int deltaYear = 0)
+		public void AdvanceTime(TimeSpan elapsedTime)
 		{
-			Day += deltaDay;
-			Month += deltaMonth;
-			Year += deltaYear;
+			Day += elapsedTime.ElapsedDay;
+			Month += elapsedTime.ElapsedMonth;
+			Year += elapsedTime.ElapsedYear;
+		}
+
+		public TimeSpan GetElapsedTime(int fromYear, int fromMonth, int fromDay)
+		{
+			return new TimeSpan(new TimeSpan(fromYear, fromMonth, fromDay), new TimeSpan(Year, Month, Day));
 		}
 	}
 }

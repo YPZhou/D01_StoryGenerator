@@ -26,7 +26,7 @@ namespace StoryGenerator.Core
 
 			foreach (var actor in actors)
 			{
-				var plot = actor.GetNextPlot(calendar);
+				var plot = actor.GetNextPlot(calendar.GetElapsedTime(StartYear, StartMonth, StartDay));
 				if (plot != null)
 				{
 					yield return plot;
