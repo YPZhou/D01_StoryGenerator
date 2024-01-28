@@ -2,6 +2,6 @@
 {
 	interface IActor
 	{
-		Plot? GetNextPlot(TimeSpan timeSpan);
+		BasePlot? GetNextPlot(TimeSpan timeSpan);
 	}
 }

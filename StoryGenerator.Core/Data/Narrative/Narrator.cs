@@ -17,7 +17,7 @@ namespace StoryGenerator.Core
 
 		public int StartDay { get; }
 
-		public IEnumerable<Plot> GetNextPlots(Calendar calendar)
+		public IEnumerable<BasePlot> GetNextPlots(Calendar calendar)
 		{
 			var actors = ObjectFactory.Instance
 				.Query<IBaseObject>()

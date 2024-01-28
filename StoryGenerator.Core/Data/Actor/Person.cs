@@ -11,11 +11,11 @@ namespace StoryGenerator.Core
 			Name = NameGenerator.GetRandomPersonName(Clan);
 		}
 
-		IObjectReference<Clan> Clan { get; }
+		public IObjectReference<Clan> Clan { get; }
 
 		public string Name { get; }
 
-		Plot? IActor.GetNextPlot(TimeSpan timeSpan)
+		BasePlot? IActor.GetNextPlot(TimeSpan timeSpan)
 		{
 			return null;
 		}

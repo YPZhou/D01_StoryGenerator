@@ -9,9 +9,15 @@ namespace StoryGenerator.Core
 		{
 		}
 
-		Plot? IActor.GetNextPlot(TimeSpan timeSpan)
+		BasePlot? IActor.GetNextPlot(TimeSpan elapsedTime)
 		{
-			return null;
+			var result = default(BasePlot);
+			if (elapsedTime.TotalElapsedDay == 0)
+			{
+				result = new PlotCreateClan();
+			}
+
+			return result;
 		}
 	}
 }

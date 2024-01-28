@@ -58,5 +58,7 @@ namespace StoryGenerator.Core
 		{
 			return new TimeSpan(new TimeSpan(fromYear, fromMonth, fromDay), new TimeSpan(Year, Month, Day));
 		}
+
+		public override string ToString() => $"{Year}年 {Month}月 {Day}日";
 	}
 }

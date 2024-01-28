@@ -12,7 +12,9 @@ namespace StoryGenerator.Core
 
 		public string Name { get; }
 
-		Plot? IActor.GetNextPlot(TimeSpan timeSpan)
+		public IObjectReference<Person>? Leader => ObjectFactory.Instance.QueryFirst<Person>(person => person.Clan.Equals(Reference));
+
+		BasePlot? IActor.GetNextPlot(TimeSpan timeSpan)
 		{
 			return null;
 		}
