@@ -18,5 +18,7 @@ namespace StoryGenerator.Core
 		{
 			return null;
 		}
+
+		public override string ToString() => $"{Name} 家";
 	}
 }

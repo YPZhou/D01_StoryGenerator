@@ -14,7 +14,7 @@ namespace StoryGenerator.Core
 			var result = default(BasePlot);
 			if (elapsedTime.TotalElapsedDay == 0)
 			{
-				result = new PlotCreateClan();
+				result = new PlotClanRise();
 			}
 
 			return result;

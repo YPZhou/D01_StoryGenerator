@@ -2,7 +2,7 @@
 
 namespace StoryGenerator.Core
 {
-	public class PlotCreateClan : BasePlot
+	public class PlotClanRise : BasePlot
 	{
 		public override void RevealPlot()
 		{
@@ -12,6 +12,6 @@ namespace StoryGenerator.Core
 
 		IObjectReference<Clan>? clan;
 
-		protected override string Description => $"{clan?.Object.Name ?? string.Empty}家 {clan?.Object.Leader?.Object.Name ?? string.Empty} 诞生。";
+		protected override string Description => $"{clan?.Object.ToString() ?? string.Empty} 崛起，家督 {clan?.Object.Leader?.Object.Name ?? string.Empty}。";
 	}
 }
