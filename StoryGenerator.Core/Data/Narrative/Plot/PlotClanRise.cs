@@ -1,4 +1,5 @@
 ﻿using BitButterCORE.V2;
+using static StoryGenerator.Core.Constants;
 
 namespace StoryGenerator.Core
 {
@@ -12,7 +13,10 @@ namespace StoryGenerator.Core
 		public override void RevealPlot()
 		{
 			clan = ObjectFactory.Instance.Create<Clan>();
-			ObjectFactory.Instance.Create<Person>(clan, PlotTime);
+
+			var rand = new Random();
+			var leaderBirthDay = new TimeSpan(PlotTime.ElapsedYear - 15 - rand.Next(0, 30), rand.Next(1, MONTH_PER_YEAR + 1), rand.Next(1, DAY_PER_MONTH + 1));
+			ObjectFactory.Instance.Create<Person>(clan, leaderBirthDay);
 		}
 
 		IObjectReference<Clan>? clan;
