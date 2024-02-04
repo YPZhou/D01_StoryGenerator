@@ -10,7 +10,7 @@ namespace StoryGenerator.Core
 			Clan = clan;
 			Name = NameGenerator.GetRandomPersonName(Clan);
 
-			BirthDay = birthDay;
+			BirthDay = new TimeSpan(birthDay.ElapsedYear, birthDay.ElapsedMonth, birthDay.ElapsedDay);
 		}
 
 		public IObjectReference<Clan> Clan { get; }
@@ -37,6 +37,14 @@ namespace StoryGenerator.Core
 					if (rand.Next(20000) < age)
 					{
 						result = new PlotPersonDeathByIllness(currentTime, Reference);
+					}
+				}
+
+				if (result == null && age >= 18 && age <= 60)
+				{
+					if (rand.Next(20000) < 100 - age)
+					{
+						result = new PlotChildBirth(currentTime, Reference);
 					}
 				}
 			}

@@ -72,6 +72,6 @@ namespace StoryGenerator.Core
 			ElapsedYear += elapsedTime.ElapsedYear;
 		}
 
-		public override string ToString() => $"{ElapsedYear}年 {ElapsedMonth}月 {ElapsedDay}日";
+		public override string ToString() => $"{ElapsedYear}年 {ElapsedMonth:d2}月 {ElapsedDay:d2}日";
 	}
 }
