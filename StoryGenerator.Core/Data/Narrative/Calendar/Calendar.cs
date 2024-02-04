@@ -1,64 +1,24 @@
-﻿using static StoryGenerator.Core.Constants;
-
-namespace StoryGenerator.Core
+﻿namespace StoryGenerator.Core
 {
 	public class Calendar
 	{
-		public Calendar(int year, int month, int day = 1)
+		public Calendar(TimeSpan currentTime)
 		{
-			Year = year;
-			this.month = month;
-			this.day = day;
+			this.currentTime = new TimeSpan(currentTime.ElapsedYear, currentTime.ElapsedMonth, currentTime.ElapsedDay);
 		}
 
-		public int Year { get; private set; }
-
-		public int Month
-		{
-			get => month;
-
-			private set
-			{
-				month = value;
-				if (month > MONTH_PER_YEAR)
-				{
-					month %= MONTH_PER_YEAR;
-					Year += 1;
-				}
-			}
-		}
-
-		int month;
-
-		public int Day
-		{
-			get => day;
-
-			private set
-			{
-				day = value;
-				if (day > DAY_PER_MONTH)
-				{
-					day %= DAY_PER_MONTH;
-					month += 1;
-				}
-			}
-		}
-
-		int day;
+		TimeSpan currentTime;
 
 		public void AdvanceTime(TimeSpan elapsedTime)
 		{
-			Day += elapsedTime.ElapsedDay;
-			Month += elapsedTime.ElapsedMonth;
-			Year += elapsedTime.ElapsedYear;
+			currentTime.AdvanceTime(elapsedTime);
 		}
 
-		public TimeSpan GetElapsedTime(int fromYear, int fromMonth, int fromDay)
+		public TimeSpan GetElapsedTime(TimeSpan startTime)
 		{
-			return new TimeSpan(new TimeSpan(fromYear, fromMonth, fromDay), new TimeSpan(Year, Month, Day));
+			return new TimeSpan(startTime, currentTime);
 		}
 
-		public override string ToString() => $"{Year}年 {Month}月 {Day}日";
+		public override string ToString() => $"{currentTime.ElapsedYear}年 {currentTime.ElapsedMonth}月 {currentTime.ElapsedDay}日";
 	}
 }

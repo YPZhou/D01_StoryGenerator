@@ -5,7 +5,7 @@
 		public Story(Narrator narrator)
 		{
 			this.narrator = narrator;
-			calendar = new Calendar(narrator.StartYear, narrator.StartMonth);
+			calendar = new Calendar(narrator.StartTime);
 		}
 
 		readonly Narrator narrator;

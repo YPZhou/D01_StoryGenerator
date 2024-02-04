@@ -6,16 +6,10 @@ namespace StoryGenerator.Core
 	{
 		public Narrator(int startYear, int startMonth, int startDay = 1)
 		{
-			StartYear = startYear;
-			StartMonth = startMonth;
-			StartDay = startDay;
+			StartTime = new TimeSpan(startYear, startMonth, startDay);
 		}
 
-		public int StartYear { get; }
-
-		public int StartMonth { get; }
-
-		public int StartDay { get; }
+		public TimeSpan StartTime { get; }
 
 		public IEnumerable<BasePlot> GetNextPlots(Calendar calendar)
 		{
@@ -26,7 +20,7 @@ namespace StoryGenerator.Core
 
 			foreach (var actor in actors)
 			{
-				var plot = actor.GetNextPlot(calendar.GetElapsedTime(StartYear, StartMonth, StartDay));
+				var plot = actor.GetNextPlot(calendar.GetElapsedTime(StartTime));
 				if (plot != null)
 				{
 					yield return plot;

@@ -1,5 +1,6 @@
 ﻿using BitButterCORE.V2;
 using StoryGenerator.Core;
+using static StoryGenerator.Core.Constants;
 
 namespace StoryGenerator
 {
@@ -7,7 +8,7 @@ namespace StoryGenerator
 	{
 		static void Main(string[] _)
 		{
-			var narrator = new Narrator(1540, 1);
+			var narrator = new Narrator(STORY_START_YEAR, STORY_START_MONTH);
 			var story = new Story(narrator);
 
 			ObjectFactory.Instance.Create<World>();

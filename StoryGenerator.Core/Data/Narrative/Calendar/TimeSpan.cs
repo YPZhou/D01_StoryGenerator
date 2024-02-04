@@ -29,12 +29,47 @@ namespace StoryGenerator.Core
 		{
 		}
 
-		public int ElapsedYear { get; }
+		public int ElapsedYear { get; private set; }
 
-		public int ElapsedMonth { get; }
+		public int ElapsedMonth
+		{
+			get => elapsedMonth;
+			private set
+			{
+				elapsedMonth = value;
+				if (elapsedMonth > MONTH_PER_YEAR)
+				{
+					elapsedMonth %= MONTH_PER_YEAR;
+					ElapsedYear += 1;
+				}
+			}
+		}
 
-		public int ElapsedDay { get; }
+		int elapsedMonth;
+
+		public int ElapsedDay
+		{
+			get => elapsedDay;
+			private set
+			{
+				elapsedDay = value;
+				if (elapsedDay > DAY_PER_MONTH)
+				{
+					elapsedDay %= DAY_PER_MONTH;
+					ElapsedMonth += 1;
+				}
+			}
+		}
+
+		int elapsedDay;
 
 		public int TotalElapsedDay => ElapsedYear * MONTH_PER_YEAR * DAY_PER_MONTH + ElapsedMonth * DAY_PER_MONTH + ElapsedDay;
+
+		public void AdvanceTime(TimeSpan elapsedTime)
+		{
+			ElapsedDay += elapsedTime.ElapsedDay;
+			ElapsedMonth += elapsedTime.ElapsedMonth;
+			ElapsedYear += elapsedTime.ElapsedYear;
+		}
 	}
 }
