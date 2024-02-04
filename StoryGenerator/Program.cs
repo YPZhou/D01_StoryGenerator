@@ -14,7 +14,7 @@ namespace StoryGenerator
 			ObjectFactory.Instance.Create<World>();
 
 			GetPlotsAndTellStory(story.GetInitialPlots);
-			for (var i = 0; i < 50; i++)
+			for (var i = 0; i < 50000; i++)
 			{
 				GetPlotsAndTellStory(story.AdvanceTimeAndGetPlots);
 

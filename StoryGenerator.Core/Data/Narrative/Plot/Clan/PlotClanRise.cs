@@ -21,9 +21,9 @@ namespace StoryGenerator.Core
 
 		IObjectReference<Clan>? clan;
 
-		protected override string Description => string.Format("{0}崛起，家督{1}({2}岁)",
+		protected override string Description => string.Format("{0}崛起，家督{1}({2}岁)。",
 			clan?.Object.ToString() ?? string.Empty,
 			clan?.Object.Leader?.Object.Name ?? string.Empty,
-			new TimeSpan(clan?.Object.Leader?.Object.BirthDay ?? PlotTime, PlotTime).ElapsedYear + 1);
+			clan?.Object.Leader?.Object.GetAge(PlotTime));
 	}
 }
