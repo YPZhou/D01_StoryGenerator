@@ -13,11 +13,14 @@ namespace StoryGenerator.Core
 
 		public IEnumerable<BasePlot> GetNextPlots(Calendar calendar)
 		{
-			var actors = ObjectFactory.Instance
-				.Query<IBaseObject>()
-				.Select(obj => obj.Object)
-				.OfType<IActor>();
+			return GetPlotsForActors<Person>(calendar)
+				.Concat(GetPlotsForActors<Clan>(calendar))
+				.Concat(GetPlotsForActors<World>(calendar));
+		}
 
+		IEnumerable<BasePlot> GetPlotsForActors<ActorType>(Calendar calendar) where ActorType : IActor, IBaseObject
+		{
+			var actors = ObjectFactory.Instance.Query<ActorType>().Select(reference => reference.Object);
 			foreach (var actor in actors)
 			{
 				var plot = actor.GetNextPlot(calendar.CurrentTime, calendar.GetElapsedTime(StartTime));
