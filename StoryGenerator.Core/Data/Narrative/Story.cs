@@ -21,7 +21,5 @@
 			calendar.AdvanceTime(TimeSpan.GetElapsedMonths(1));
 			return narrator.GetNextPlots(calendar);
 		}
-
-		public string GetCalendarTime() => calendar?.ToString() ?? string.Empty;
 	}
 }

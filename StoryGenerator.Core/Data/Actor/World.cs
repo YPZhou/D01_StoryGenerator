@@ -9,12 +9,12 @@ namespace StoryGenerator.Core
 		{
 		}
 
-		BasePlot? IActor.GetNextPlot(TimeSpan elapsedTime)
+		BasePlot? IActor.GetNextPlot(TimeSpan currentTime, TimeSpan elapsedTime)
 		{
 			var result = default(BasePlot);
 			if (elapsedTime.TotalElapsedDay == 0)
 			{
-				result = new PlotClanRise();
+				result = new PlotClanRise(currentTime);
 			}
 
 			return result;

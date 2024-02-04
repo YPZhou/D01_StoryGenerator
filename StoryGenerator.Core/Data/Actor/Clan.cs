@@ -14,11 +14,11 @@ namespace StoryGenerator.Core
 
 		public IObjectReference<Person>? Leader => ObjectFactory.Instance.QueryFirst<Person>(person => person.Clan.Equals(Reference));
 
-		BasePlot? IActor.GetNextPlot(TimeSpan timeSpan)
+		BasePlot? IActor.GetNextPlot(TimeSpan currentTime, TimeSpan elapsedTime)
 		{
 			return null;
 		}
 
-		public override string ToString() => $"{Name} 家";
+		public override string ToString() => $"{Name}家";
 	}
 }

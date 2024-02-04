@@ -4,21 +4,19 @@
 	{
 		public Calendar(TimeSpan currentTime)
 		{
-			this.currentTime = new TimeSpan(currentTime.ElapsedYear, currentTime.ElapsedMonth, currentTime.ElapsedDay);
+			CurrentTime = new TimeSpan(currentTime.ElapsedYear, currentTime.ElapsedMonth, currentTime.ElapsedDay);
 		}
 
-		TimeSpan currentTime;
+		public TimeSpan CurrentTime { get; }
 
 		public void AdvanceTime(TimeSpan elapsedTime)
 		{
-			currentTime.AdvanceTime(elapsedTime);
+			CurrentTime.AdvanceTime(elapsedTime);
 		}
 
 		public TimeSpan GetElapsedTime(TimeSpan startTime)
 		{
-			return new TimeSpan(startTime, currentTime);
+			return new TimeSpan(startTime, CurrentTime);
 		}
-
-		public override string ToString() => $"{currentTime.ElapsedYear}年 {currentTime.ElapsedMonth}月 {currentTime.ElapsedDay}日";
 	}
 }

@@ -13,10 +13,10 @@ namespace StoryGenerator
 
 			ObjectFactory.Instance.Create<World>();
 
-			GetPlotsAndTellStory(story.GetInitialPlots, story.GetCalendarTime);
+			GetPlotsAndTellStory(story.GetInitialPlots);
 			for (var i = 0; i < 50; i++)
 			{
-				GetPlotsAndTellStory(story.AdvanceTimeAndGetPlots, story.GetCalendarTime);
+				GetPlotsAndTellStory(story.AdvanceTimeAndGetPlots);
 
 				//var person = ObjectFactory.Instance.Create<Person>(clan);
 				//Console.WriteLine($"角色{i + 1}：{person.Object.Name}");
@@ -28,14 +28,13 @@ namespace StoryGenerator
 			}
 		}
 
-		static void GetPlotsAndTellStory(Func<IEnumerable<BasePlot>> plotsGetter, Func<string> calendarTimeGetter)
+		static void GetPlotsAndTellStory(Func<IEnumerable<BasePlot>> plotsGetter)
 		{
-			var calendarTime = calendarTimeGetter.Invoke();
 			var plots = plotsGetter.Invoke();
 			foreach (var plot in plots)
 			{
 				plot.RevealPlot();
-				Console.WriteLine($"{calendarTime} - {plot}");
+				Console.WriteLine(plot);
 			}
 		}
 	}

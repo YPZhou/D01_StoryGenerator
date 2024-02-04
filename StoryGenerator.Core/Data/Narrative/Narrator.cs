@@ -20,7 +20,7 @@ namespace StoryGenerator.Core
 
 			foreach (var actor in actors)
 			{
-				var plot = actor.GetNextPlot(calendar.GetElapsedTime(StartTime));
+				var plot = actor.GetNextPlot(calendar.CurrentTime, calendar.GetElapsedTime(StartTime));
 				if (plot != null)
 				{
 					yield return plot;
